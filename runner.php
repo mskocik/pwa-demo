@@ -7,7 +7,7 @@ $run = true;
 $lastHash = '';
 
 function createPrecache(&$lastHash) {
-    $files = ['another.js', 'app.js', 'index.html', 'img/favicon-16x16.png', 'img/favicon-32x32.png', 'img/android-chrome-192x192.png', 'img/android-chrome-512x512.png', 'img/maskable_icon.png'];
+    $files = ['another.js', 'app.js', 'index.html', 'img/favicon-16x16.png', 'img/favicon-32x32.png', 'img/android-chrome-192x192.png', 'img/android-chrome-512x512.png', 'img/maskable_icon.png', 'img/icons.svg'];
     $suffix = \Nette\Utils\Random::generate(24);
     $data = [];
     foreach ($files as $f) {

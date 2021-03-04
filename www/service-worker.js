@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.tj0rv1nah4nar52vs8igd1r1.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+importScripts("/precache-manifest.xnmvsya2kewaho3tnrfyuoct.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 workbox.core.setCacheNameDetails({ prefix: 'd4' })
 
@@ -49,7 +49,6 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("fetch", (event) => {
   console.log('SW fetch', event)
-  return;
   // We only want to call event.respondWith() if this is a navigation request
   // for an HTML page.
   if (event.request.mode === "navigate") {
