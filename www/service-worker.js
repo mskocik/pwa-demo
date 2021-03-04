@@ -3,7 +3,7 @@ importScripts("/precache-manifest.xnmvsya2kewaho3tnrfyuoct.js", "https://storage
 workbox.core.setCacheNameDetails({ prefix: 'd4' })
 
 //Change this value every time before you build
-const LATEST_VERSION = 'v1.0'
+const LATEST_VERSION = 'v1.1'
 const CACHE_NAME = "offline";
 // Customize this with a different URL if needed.
 const OFFLINE_URL = "/index.html";
