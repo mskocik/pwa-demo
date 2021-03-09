@@ -1,23 +1,37 @@
 const divInstall = document.getElementById('installContainer');
 const butInstall = document.getElementById('butInstall');
 
+let deferredPrompt;
+
 /* Put code here */
+window.addEventListener('appinstalled', () => {
+  // Hide the app-provided install promotion
+  // Clear the deferredPrompt so it can be garbage collected
+  deferredPrompt = null;
+  // Optionally, send analytics event to indicate successful install
+  console.log('PWA was installed');
+});
+
 window.addEventListener('beforeinstallprompt', event => {
-  window.deferredPrompt = event;
+  console.log('before install event');
+  deferredPrompt = event;
   divInstall.classList.toggle('hidden', false);
 });
 
 butInstall.onclick = () => {
-  const promptEvent = window.deferredPrompt;
+  console.log('install button clicked');
+  const promptEvent = deferredPrompt;
   if (!promptEvent) {
     // The deferred prompt isn't available.
     return;
   }
   promptEvent.prompt();
   
-  window.deferredPrompt = null;'
+  deferredPrompt = null;
   divInstall.classList.toggle('hidden', true);
 };
+
+
 
 
 /* Only register a service worker if it's supported */
