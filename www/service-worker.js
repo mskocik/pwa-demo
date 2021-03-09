@@ -29,7 +29,7 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', function(event) {
-  // console.log('[Service Worker] Fetch', event.request.url);
+  console.log('[Service Worker] Fetch', event.request.url);
   if (event.request.mode === 'navigate') {
     event.respondWith((async () => {
       try {
